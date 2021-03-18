@@ -153,7 +153,7 @@ public class D3Test {
     driver.get("https://cs1632.appspot.com/hello");
     driver.manage().window().setSize(new Dimension(1200, 800));
     vars.put("trail", js.executeScript("return \'Jazzy\'"));
-    driver.get("https://cs1632.appspot.com/hello/vars.get('trail').toString()");
+    driver.get("https://cs1632.appspot.com/hello/vars.get(\"trail\").toString()");
     assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Hello CS1632, from vars.get(\"trail\").toString()!"));
   }
   @Test
