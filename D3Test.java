@@ -40,8 +40,7 @@ public class D3Test {
   public void fUNWELCOME() {
     driver.get("https://cs1632.appspot.com/");
     driver.manage().window().setSize(new Dimension(1200, 800));
-    assertThat(driver.findElement(By.cssSelector("i")).getText(), is("- Brian W. Kernighan"));
-    assertThat(driver.findElement(By.cssSelector(".jumbotron > .lead")).getText(), is("Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\n- Brian W. Kernighan"));
+    assertThat(driver.findElement(By.cssSelector(".jumbotron > .lead")).getText(), is("Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\\\\\\\n- Brian W. Kernighan"));
   }
   @Test
   public void dEFECT1FUNFIB() {
@@ -59,7 +58,7 @@ public class D3Test {
     driver.get("https://cs1632.appspot.com/hello");
     driver.manage().window().setSize(new Dimension(1200, 800));
     vars.put("\'trail\'", js.executeScript("return \'Jazzy/NotHandled\'"));
-    driver.get("https://cs1632.appspot.com/hello/vars.get('trail').toString()");
+    driver.get("https://cs1632.appspot.com/hello/vars.get(\"trail\").toString()");
     assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Hello CS1632, from vars.get(\"trail\").toString()!"));
   }
   @Test
@@ -130,17 +129,10 @@ public class D3Test {
   public void fUNFIB() {
     driver.get("https://cs1632.appspot.com/fib");
     driver.manage().window().setSize(new Dimension(1200, 800));
-    vars.put("x", js.executeScript("return[1,2,3,4,5,6,7,8,9,10]"));
-    ArrayList collectionX = (ArrayList) vars.get("x");
-    for (int i = 0; i < collectionX.size() - 1; i++) {
-      vars.put("num", collectionX.get(i));
-      driver.findElement(By.name("value")).click();
-      driver.findElement(By.name("value")).sendKeys(vars.get("num").toString());
-      driver.findElement(By.cssSelector("input:nth-child(2)")).click();
-      vars.put("fib", js.executeScript("var num1=0, num2=1, sum; for(let i = 1; i < arguments[0]; i++) { sum=num1+num2; num1=num2; num2=sum; } return num2;", vars.get("num")));
-      assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Fibonacci of vars.get(\"num\").toString() is ${fib}!"));
-      driver.findElement(By.linkText("Fibonacci")).click();
-    }
+    driver.findElement(By.name("value")).click();
+    driver.findElement(By.name("value")).sendKeys("1");
+    driver.findElement(By.cssSelector("input:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Fibonacci of 1 is 1!"));
   }
   @Test
   public void fUNHELLO() {
@@ -203,7 +195,7 @@ public class D3Test {
     ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
     for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
       vars.put("name", collectionLinkNames.get(i));
-      driver.findElement(By.linkText("vars.get('name').toString()")).click();
+      driver.findElement(By.linkText("vars.get(\"name\").toString()")).click();
       assertEquals(vars.get("link1").toString(), "/");
       assertEquals(vars.get("link2").toString(), "/fact");
       assertEquals(vars.get("link3").toString(), "/fib");
