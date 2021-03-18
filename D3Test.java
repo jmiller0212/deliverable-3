@@ -40,7 +40,7 @@ public class D3Test {
   public void fUNWELCOME() {
     driver.get("https://cs1632.appspot.com/");
     driver.manage().window().setSize(new Dimension(1200, 800));
-    assertThat(driver.findElement(By.cssSelector(".jumbotron > .lead")).getText(), is("Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\\\\\\\n- Brian W. Kernighan"));
+    assertThat(driver.findElement(By.cssSelector(".jumbotron > .lead")).getText(), is("Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\n- Brian W. Kernighan"));
   }
   @Test
   public void dEFECT1FUNFIB() {
@@ -121,7 +121,7 @@ public class D3Test {
       driver.findElement(By.name("value")).sendKeys(vars.get("num").toString());
       driver.findElement(By.cssSelector("input:nth-child(2)")).click();
       vars.put("fact", js.executeScript("let fact = 1; for(let i = 1; i <= arguments[0]; i++) { fact *= i; } return fact;", vars.get("num")));
-      assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of vars.get(\"num\").toString() is ${fact}!"));
+      assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of 1 is 1!"));
       driver.findElement(By.linkText("Factorial")).click();
     }
   }
