@@ -117,11 +117,11 @@ public class D3Test {
     // ArrayList collectionX = (ArrayList) vars.get("x");
     // for (int i = 0; i < collectionX.size() - 1; i++) {
       // vars.put("num", collectionX.get(i));
-      driver.findElement(By.name("value")).click();
-      driver.findElement(By.name("value")).sendKeys(vars.get("1").toString());
-      driver.findElement(By.cssSelector("input:nth-child(2)")).click();
+    driver.findElement(By.name("value")).click();
+    driver.findElement(By.name("value")).sendKeys("1");
+    driver.findElement(By.cssSelector("input:nth-child(2)")).click();
       // vars.put("fact", js.executeScript("let fact = 1; for(let i = 1; i <= arguments[0]; i++) { fact *= i; } return fact;", vars.get("num")));
-      assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of 1 is 1!"));
+    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of 1 is 1!"));
       // driver.findElement(By.linkText("Factorial")).click();
     // }
   }
