@@ -26,7 +26,7 @@
       "command": "assertText",
       "target": "css=.jumbotron > .lead",
       "targets": [],
-      "value": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\\\n- Brian W. Kernighan"
+      "value": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\n- Brian W. Kernighan"
     }]
   }, {
     "id": "d85027e3-ce64-459e-aac3-b89f72632c28",
@@ -273,94 +273,66 @@
     }, {
       "id": "3d269cd0-ffa9-4140-b460-95fca6a9a1dc",
       "comment": "",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "return[1,2,3,4,5,6,7,8,9,10]",
       "targets": [],
       "value": "x"
     }, {
       "id": "29d5475a-669d-4845-9b80-517444036236",
       "comment": "",
-      "command": "//forEach",
+      "command": "forEach",
       "target": "x",
       "targets": [],
       "value": "num"
     }, {
       "id": "b2a9e325-ae53-40df-9514-f732fe3d2e6b",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "name=value",
       "targets": [],
       "value": ""
     }, {
       "id": "34534e7c-2e06-40ba-8178-af4e5fb078dd",
       "comment": "",
-      "command": "//type",
+      "command": "type",
       "target": "name=value",
       "targets": [],
       "value": "${num}"
     }, {
       "id": "cdbcb287-4279-4666-9726-6a97597da2da",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "css=input:nth-child(2)",
       "targets": [],
       "value": ""
     }, {
       "id": "720f93a7-aa17-4e59-b2f1-c613ea7bc127",
       "comment": "",
-      "command": "//executeScript",
+      "command": "executeScript",
       "target": "var num1=0, num2=1, sum; for(let i = 1; i < ${num}; i++) { sum=num1+num2; num1=num2; num2=sum; } return num2; ",
       "targets": [],
       "value": "fib"
     }, {
       "id": "5a36ce91-3170-4f02-8a46-0df2d0df5f9b",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "css=h2",
       "targets": [],
       "value": "Fibonacci of ${num} is ${fib}!"
     }, {
       "id": "1b9fdbd8-cf79-4b96-b53c-770461ace49d",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "linkText=Fibonacci",
       "targets": [],
       "value": ""
     }, {
       "id": "6963727f-1347-414e-b9ad-770ba87a3b10",
       "comment": "",
-      "command": "//end",
+      "command": "end",
       "target": "",
       "targets": [],
       "value": ""
-    }, {
-      "id": "f3719cd6-5557-4294-bcc6-e1d0a8d91f72",
-      "comment": "",
-      "command": "click",
-      "target": "name=value",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3fbedee8-977b-43a9-a0e7-3d4bb5c32476",
-      "comment": "",
-      "command": "type",
-      "target": "name=value",
-      "targets": [],
-      "value": "1"
-    }, {
-      "id": "b34e82b7-4c08-4016-925c-289001bd63cc",
-      "comment": "",
-      "command": "click",
-      "target": "css=input:nth-child(2)",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "e696823e-c5ce-49fb-92de-87961dc57080",
-      "comment": "",
-      "command": "assertText",
-      "target": "css=h2",
-      "targets": [],
-      "value": "Fibonacci of 1 is 1!"
     }]
   }, {
     "id": "cd50ab13-05bc-4076-9e05-06b08638a730",
