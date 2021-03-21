@@ -191,7 +191,7 @@ public class D3Test {
       String attribute = element.getAttribute("href");
       vars.put("link5", attribute);
     }
-    vars.put("linkNames", js.executeScript("return[\"Factorial\",\"Fibonacci\",\"Hello\",\"Cathedral Pics\"]"));
+    vars.put("linkNames", js.executeScript("return['Factorial','Fibonacci','Hello','Cathedral Pics']"));
     ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
     for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
       vars.put("name", collectionLinkNames.get(i));
