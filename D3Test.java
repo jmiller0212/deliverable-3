@@ -191,17 +191,17 @@ public class D3Test {
       String attribute = element.getAttribute("href");
       vars.put("link5", attribute);
     }
-    vars.put("linkNames", js.executeScript("return['Factorial','Fibonacci','Hello','Cathedral Pics']"));
-    ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
-    for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
-      vars.put("name", collectionLinkNames.get(i));
-      driver.findElement(By.linkText("vars.get('name').toString()")).click();
+    // vars.put("linkNames", js.executeScript("return['Factorial','Fibonacci','Hello','Cathedral Pics']"));
+    // ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
+    // for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
+    //   vars.put("name", collectionLinkNames.get(i));
+    //   driver.findElement(By.linkText("vars.get('name').toString()")).click();
       assertEquals(vars.get("link1").toString(), "https://cs1632.appspot.com/");
       assertEquals(vars.get("link2").toString(), "https://cs1632.appspot.com/fact");
       assertEquals(vars.get("link3").toString(), "https://cs1632.appspot.com/fib");
       assertEquals(vars.get("link4").toString(), "https://cs1632.appspot.com/hello");
       assertEquals(vars.get("link5").toString(), "https://cs1632.appspot.com/cathy");
-    }
+    // }
   }
 }
 /*
