@@ -195,7 +195,7 @@ public class D3Test {
     // ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
     // for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
     //   vars.put("name", collectionLinkNames.get(i));
-    //   driver.findElement(By.linkText("vars.get('name').toString()")).click();
+      driver.findElement(By.linkText("CS1632 D3 Home")).click();
       assertEquals(vars.get("link1").toString(), "/");
       assertEquals(vars.get("link2").toString(), "/fact");
       assertEquals(vars.get("link3").toString(), "/fib");
