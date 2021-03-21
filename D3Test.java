@@ -51,26 +51,26 @@ public class D3Test {
     driver.findElement(By.name("value")).sendKeys(vars.get("num").toString());
     driver.findElement(By.cssSelector("input:nth-child(2)")).click();
     vars.put("fib", js.executeScript("var num1=0, num2=1, sum; for(let i = 1; i < arguments[0]; i++) { sum=num1+num2; num1=num2; num2=sum; } return num2;", vars.get("num")));
-    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Fibonacci of vars.get(\"num\").toString() is ${fib}!"));
+    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Fibonacci of vars.get('num').toString() is ${fib}!"));
   }
   @Test
   public void dEFECT3FUNHELLOTRAILING() {
     driver.get("https://cs1632.appspot.com/hello");
     driver.manage().window().setSize(new Dimension(1200, 800));
-    vars.put("\'trail\'", js.executeScript("return \'Jazzy/NotHandled\'"));
-    driver.get("https://cs1632.appspot.com/hello/vars.get(\"trail\").toString()");
-    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Hello CS1632, from vars.get(\"trail\").toString()!"));
+    vars.put("\'trail\'", js.executeScript("return 'Jazzy/NotHandled'"));
+    driver.get("https://cs1632.appspot.com/hello/vars.get('trail').toString()");
+    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Hello CS1632, from vars.get('trail').toString()!"));
   }
   @Test
   public void dEFECT2FUNFACT() {
     driver.get("https://cs1632.appspot.com/fact");
     driver.manage().window().setSize(new Dimension(1200, 800));
-    vars.put("str", js.executeScript("return \"error\""));
+    vars.put("str", js.executeScript("return 'error'"));
     driver.findElement(By.name("value")).click();
     driver.findElement(By.name("value")).sendKeys(vars.get("str").toString());
     driver.findElement(By.cssSelector("input:nth-child(2)")).click();
     vars.put("fact", js.executeScript("let fact = 1; for(let i = 1; i <= arguments[0]; i++) { fact *= i; } return fact;", vars.get("str")));
-    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of vars.get(\"str\").toString() is ${fact}!"));
+    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Factorial of vars.get('str').toString() is ${fact}!"));
   }
   @Test
   public void fUNCATHY() {
@@ -191,17 +191,17 @@ public class D3Test {
       String attribute = element.getAttribute("href");
       vars.put("link5", attribute);
     }
-    vars.put("linkNames", js.executeScript("return['Factorial','Fibonacci','Hello','Cathedral Pics']"));
-    ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
-    for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
-      vars.put("name", collectionLinkNames.get(i));
-      driver.findElement(By.linkText("vars.get('name').toString()")).click();
+    // vars.put("linkNames", js.executeScript("return['Factorial','Fibonacci','Hello','Cathedral Pics']"));
+    // ArrayList collectionLinkNames = (ArrayList) vars.get("linkNames");
+    // for (int i = 0; i < collectionLinkNames.size() - 1; i++) {
+    //   vars.put("name", collectionLinkNames.get(i));
+    //   driver.findElement(By.linkText("vars.get('name').toString()")).click();
       assertEquals(vars.get("link1").toString(), "/");
       assertEquals(vars.get("link2").toString(), "/fact");
       assertEquals(vars.get("link3").toString(), "/fib");
       assertEquals(vars.get("link4").toString(), "/hello");
       assertEquals(vars.get("link5").toString(), "/cathy");
-    }
+    // }
   }
 }
 /*
