@@ -201,7 +201,7 @@ public class D3Test {
       assertEquals(vars.get("link3").toString(), "https://cs1632.appspot.com/fib");
       assertEquals(vars.get("link4").toString(), "https://cs1632.appspot.com/hello");
       assertEquals(vars.get("link5").toString(), "https://cs1632.appspot.com/cathy");
-    // }
+    }
   }
 }
 /*
